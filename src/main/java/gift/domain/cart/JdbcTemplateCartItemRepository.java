@@ -25,7 +25,7 @@ public class JdbcTemplateCartItemRepository implements CartItemRepository {
 
         int rowNum = jdbcTemplate.update(sql, cartItem.getId(), cartItem.getProductId());
 
-        if(rowNum != 1){
+        if (rowNum != 1) {
             throw new BusinessException(HttpStatus.BAD_REQUEST, "장바구니 담기에 실패했습니다.");
         }
     }

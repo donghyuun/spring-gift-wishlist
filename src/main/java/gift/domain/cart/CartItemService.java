@@ -31,7 +31,7 @@ public class CartItemService {
      * 장바구니에 상품 ID 추가
      */
     public void addCartItem(Long userId, Long productId) {
-        if(cartItemRepository.isExistsInCart(userId, productId)){
+        if (cartItemRepository.isExistsInCart(userId, productId)) {
             throw new BusinessException(HttpStatus.BAD_REQUEST, "해당 상품이 장바구니에 이미 존재합니다.");
         }
 

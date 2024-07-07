@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
  * 개발자가 직접 날리는 에러
  */
 public class BusinessException extends RuntimeException{
-    HttpStatus status;
+    private final HttpStatus status;
 
     public BusinessException(HttpStatus status, String message) {
         super(message);
@@ -18,7 +18,4 @@ public class BusinessException extends RuntimeException{
         return status;
     }
 
-    public void setStatus(HttpStatus status) {
-        this.status = status;
-    }
 }
